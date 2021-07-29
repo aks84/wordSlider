@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ body{
+    width: 90%;
+    margin: 0 auto;
+    background-color: orange;
+    font-family: ui-monospace;
+ }
+ 
+ .divOuter{
+    background-color: azure;
+    padding: 2px 2px;
+    border-radius: 3px;
+    margin-top: 10px;
+ }
+ 
+ .divInner{
+  border: 5px solid gray;
+  border-radius: 3px;
+  padding:4px;
+  word-spacing: 3px;
+  text-align: center;
+ }
+ 
+
+
+#wss{
+	
+	-webkit-animation: flip-2-hor-top-1 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	animation: flip-2-hor-top-1 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+</style>
+<script>
+var wss_i = 0;
+var wss_array = [
+"1. abandon : 버리다 ",
+"2. ability : 능력 ",
+"3. able : 할 수있는 ",
+"4. about : ~에 대한 ",
+"5. above : ~ 위에 ",
+"6. abroad : 해외에서  ",
+"7. absolute : 순수한 ",
+"8. absolutely : 물론 ",
+"9. academic : 학생 ",
+"10. accept : 동의하기 ",
+"11. acceptable : 수용 가능한 ",
+"12. access : 입장 ",
+"13. accident : 사고  ",
+"14. accompany : 동반하다 ",
+"15. according : ~에 따라 ",
+"16. account : 계정  ",
+"17. accurate : 정확한 ",
+"18. accuse : 고발하다 ",
+"19. achieve : 성취하다 ",
+"20. achievement : 성취 ",
+"21. acknowledge : 인정하다 ",
+"22. acquire : 습득하다 ",
+"23. across : 건너서 ",
+"24. act : 행동 ",
+"25. action : 행동 ",
+"26. active : 활동적인 ",
+"27. activity : 활동 ",
+"28. actor : 배우 ",
+"29. actress : 여배우 ",
+"30. actual : 실제 ",
+"31. actually : 실제로 ",
+"32. ad : 기원 후 ",
+"33. adapt : 적응하다  ",
+"34. add : 추가하다 ",
+"35. addition : 덧셈 ",
+"36. additional : 추가의 ",
+"37. address : 주소  ",
+"38. administration : 관리 ",
+"39. admire : 존경하다 ",
+"40. admit : 인정하다 ",
+"41. adopt : 입양하다 ",
+"42. adult : 성인 ",
+"43. advance : 전진 ",
+"44. advanced : 고급의 ",
+"45. advantage : 이점 ",
+"46. adventure : 모험 ",
+"47. advertise : 공시 하다 ",
+"48. advertisement : 광고 ",
+"49. advertising : 광고하는 ",
+"50. advice : 조언 ",
+"51. advise : 권하다 ",
+"52. affair : 일 ",
+"53. affect : 영향을 미치다  ",
+"54. afford : 형편이되다  ",
+"55. afraid : 두려워하는 ",
+"56. after : ~ 후에 ",
+"57. afternoon : 오후  ",
+"58. afterward : 기후 ",
+"59. again : 다시  ",
+"60. against : 에 맞서 ",
+"61. age : 나이 ",
+"62. agency : 대행사 ",
+"63. agenda : 안건  ",
+"64. agent : 에이전트 ",
+"65. aggressive : 공격적인 ",
+"66. ago : ~ 전에  ",
+"67. agree : 동의하다  ",
+"68. agreement : 합의 ",
+"69. ah : 아 ",
+"70. ahead : 앞으로 ",
+"71. aid : 지원 ",
+"72. aim : 겨냥하다 ",
+"73. air : 공기 ",
+"74. aircraft : 항공기 ",
+"75. airline : 공기 호스 ",
+"76. airport : 공항 ",
+"77. alarm : 경보 ",
+"78. album : 앨범 ",
+"79. alcohol : 술 ",
+"80. alcoholic : 알콜 중독자 ",
+"81. alive : 살아있는  ",
+"82. all : 모두 ",
+"83. all : 모두 ",
+"84. allow : 허용하다 ",
+"85. almost : 거의  ",
+"86. alone : 홀로   ",
+"87. along : ~을 따라  ",
+"88. already : 이미 ",
+"89. also : 또한 ",
+"90. alter : 바꾸다 ",
+"91. alternative : 대안 ",
+"92. although : 하지만 ",
+"93. always : 언제나 ",
+"94. amazed : 놀란 ",
+"95. amazing : 놀라운 ",
+"96. ambition : 큰 뜻 ",
+"97. among : 의 사이에 ",
+"98. amount : 양 ",
+"99. analysis : 분석 ",
+"100. analyze : 분석하다 ",
+"101. ancient : 고대의 ",
+"102. and : 그리고 ",
+"103. anger : 화  ",
+"104. angle : 각도 ",
+"105. angry : 화난 ",
+"106. animal : 동물 ",
+"107. ankle : 발목 ",
+"108. anniversary : 기념일 ",
+"109. announce : 발표하다  ",
+"110. announcement : 발표 ",
+"111. annoy : 짜증나게하다 ",
+"112. annoyed : 짜증이 난 ",
+"113. annoying : 성가신 ",
+"114. annual : 연간 ",
+"115. another : 또 다른  ",
+"116. answer : 답변 ",
+"117. anxious : 불안해하는 ",
+"118. any : 어느 ",
+"119. anybody : 아무도 ",
+"120. anymore : 더 이상 ",
+"121. anyone : 누구나 ",
+"122. anything : 아무것 ",
+"123. anyway : 그래도 ",
+"124. anywhere : 어딘가에  ",
+"125. apart : 따로  ",
+"126. apartment : 아파트 ",
+"127. apologize : 사과하다  ",
+"128. app : 앱 ",
+"129. apparent : 명백한 ",
+"130. apparently : 보기에 ",
+"131. appeal : 항소 ",
+"132. appear : 나타나다 ",
+"133. appearance : 모습 ",
+"134. apple : 사과 ",
+"135. application : 애플리케이션 ",
+"136. apply : 적용하다 ",
+"137. appointment : 약속 ",
+"138. appreciate : 고마워하다 ",
+"139. approach : 접근하다 ",
+"140. appropriate : 적절한 ",
+"141. approval : 승인 ",
+"142. approve : 승인하다 ",
+"143. approximately : 약 ",
+"144. April : 4 월 ",
+"145. architect : 건축가 ",
+"146. architecture : 건축학  ",
+"147. area : 지역 ",
+"148. argue : 다투다 ",
+"149. argument : 논쟁 ",
+"150. arise : 생기다 ",
+"151. arm : 팔 ",
+"152. armed : 무장 ",
+"153. arms : 무기 ",
+"154. army : 군대 ",
+"155. around : 약  ",
+"156. arrange : 마련하다 ",
+"157. arrangement : 준비 ",
+"158. arrest : 체포 ",
+"159. arrival : 도착 ",
+"160. arrive : 도착하다 ",
+"161. art : 미술 ",
+"162. article : 기사 ",
+"163. artificial : 인공의 ",
+"164. artist : 아티스트 ",
+"165. artistic : 예술적 ",
+"166. as : NS  ",
+"167. ashamed : 부끄러운 ",
+"168. aside : 곁에  ",
+"169. ask : 물어보기 ",
+"170. asleep : 죽어 ",
+"171. aspect : 측면 ",
+"172. assess : 평가하다 ",
+"173. assessment : 평가 ",
+"174. assignment : 과제 ",
+"175. assist : 돕다 ",
+"176. assistant : 어시스턴트 ",
+"177. associate : 연관 짓다 ",
+"178. associated : 관련된  ",
+"179. association : 협회 ",
+"180. assume : 추정하다 ",
+"181. at : ~에 ",
+"182. athlete : 운동 선수 ",
+"183. atmosphere : 대기 ",
+"184. attach : 붙이다 ",
+"185. attack : 공격 ",
+"186. attempt : 시도 ",
+"187. attend : 참석하다 ",
+"188. attention : 주목 ",
+"189. attitude : 태도 ",
+"190. attorney : 변호사 ",
+"191. attract : 끌어들이다 ",
+"192. attraction : 끌어 당김 ",
+"193. attractive : 매력적인 ",
+"194. audience : 청중 ",
+"195. August : 팔월 ",
+"196. aunt : 이모 ",
+"197. author : 작가 ",
+"198. authority : 권한 ",
+"199. automatic : 자동적 인 ",
+"200. automatically : 자동으로 ",
+"201. available : 사용 가능 ",
+"202. average : 평균 ",
+"203. avoid : 피하다 ",
+"204. award : 상 ",
+"205. aware : 알고있는 ",
+"206. away : 떨어져있는 ",
+"207. awesome : 엄청난 ",
+"208. awful : 끔찍한  "
+
+];
+
+
+
+
+
+
+var wss_elem;
+function wssNext(){
+	wss_i++;
+	wss_elem.style.opacity = 0;
+	if(wss_i > (wss_array.length - 1)){
+		wss_i = 0;
+	}
+	setTimeout('wssSlide()',1500);
+}
+function wssSlide(){
+	wss_elem.innerHTML = wss_array[wss_i];
+	wss_elem.style.opacity = 1;
+	setTimeout('wssNext()',4000);
+	
+}
+</script>
+</head>
+<body>
+
+  <div class="divOuter">
+    <div class="divInner">
+      <h2><span id="wss"></span></h2>
+      <script>wss_elem = document.getElementById("wss"); wssSlide(); </script>
+    </div>
+  </div>
+</body>
+</html>
